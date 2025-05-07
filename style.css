@@ -1,5 +1,11 @@
 body {
-  padding-top: 99px;
+  padding-top: 76px; /* Adjusted for smaller navbar height on mobile */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 99px; /* Original padding for larger screens */
+  }
 }
 
 .menu {
@@ -7,20 +13,32 @@ body {
   align-items: center;
   justify-content: space-around;
   list-style: none;
-  padding: 0 100px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    padding: 0 50px;
+  }
 }
 
 .menu li {
   height: 60%;
-  font-size: 18px;
+  font-size: 16px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px 15px;
   text-transform: uppercase;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .menu li {
+    font-size: 18px;
+    padding: 20px;
+  }
 }
 
 .menu li::before,
@@ -51,11 +69,7 @@ body {
   border-right-width: 2px;
 }
 
-.menu1 li:hover {
-  color: #fff;
-}
-
-/* On Hover border color is changed from transparent to the #fff */
+/* On Hover border color is changed from transparent to black */
 /* Width and a height of the sudo elements are increased from zero to 100% */
 .menu1 li:hover::before,
 .menu1 li:hover::after {
@@ -75,6 +89,35 @@ body {
   transition-delay: 0s, 0.3s, 0s;
 }
 
-nav {
-background-color: #e3f2fd;
+/* Responsive image adjustments */
+.img-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive typography */
+@media (max-width: 767px) {
+  h1.display-1 {
+    font-size: calc(1.625rem + 4.5vw);
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .navbar-brand .fs-3 {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Fix for mobile menu items */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    margin-top: 10px;
+  }
+  
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
 }
